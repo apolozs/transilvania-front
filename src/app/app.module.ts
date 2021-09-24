@@ -24,6 +24,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { ReservaComponent } from './pages/reserva/reserva.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { InicioComponent } from './pages/inicio/inicio.component';
     LoginComponent,
     CadastroComponent,
     HomeComponent,
-    InicioComponent
+    InicioComponent,
+    ReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { InicioComponent } from './pages/inicio/inicio.component';
     MatSlideToggleModule,
     MatSelectModule,
     MatOptionModule,
-    MatProgressSpinnerModule    
+    MatProgressSpinnerModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@
                 <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
             </span>
 
-            <label class="texto_cadastro">Cadastro</label>
+            <label class="texto_cadastro">Reserva</label>
         </mat-toolbar>
     </div>
 
@@ -18,18 +18,21 @@
                 <div class="first_content">
                     <div class="div_title_container">
                         <div class="div_title">
-                            <h1 class="txt_css">Cadastre-se aqui !</h1>
+                            <h1 class="txt_css">Reserve seu quarto aqui !</h1>
                         </div>
                     </div>
                    <div class="inputs_container">
                     <mat-form-field appearance="fill" class="input_nome">
                         <mat-label>Nome</mat-label>
                             <input matInput>
-                        </mat-form-field>          
-                    <mat-form-field appearance="fill" class="input_senha">
-                        <mat-label>Senha</mat-label>
-                            <input matInput>
                         </mat-form-field>
+                        <mat-form-field appearance="fill" class="input_Quarto">
+                            <mat-label>Quarto</mat-label>
+                            <mat-select>
+                              <mat-option value="one">Quarto 1</mat-option>
+                              <mat-option value="two">Quarto 2</mat-option>
+                            </mat-select>
+                          </mat-form-field>          
                    </div>
                 </div>
                 
@@ -37,13 +40,14 @@
              <div class="content_2">
                 <div class="second_content">
                     <div class="inputs_2">
-                        <mat-form-field appearance="fill" class="input_cpf">
-                            <mat-label>CPF</mat-label>
+                        
+                        <mat-form-field appearance="fill" class="input_DataIni">
+                            <mat-label>Data Inicio</mat-label>
                             <input matInput>
                         </mat-form-field>
     
-                        <mat-form-field appearance="fill" class="input_data_nasc">
-                            <mat-label>Data de nascimento</mat-label>
+                        <mat-form-field appearance="fill" class="input_DataFim">
+                            <mat-label>Data Fim</mat-label>
                             <input matInput>
                         </mat-form-field>
 

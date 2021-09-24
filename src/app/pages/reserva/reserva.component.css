@@ -105,7 +105,7 @@
     /* background-color: red; */
 }
 
-.input_senha
+.input_Quarto
 {
     /* height: 100%; */
     width: 100%;
@@ -142,7 +142,7 @@
     /* background-color: red;   */
 }
 
-.input_cpf
+.input_DataIni
 {
     padding-top: 1vw;
     padding-left: 2vw;
@@ -150,7 +150,7 @@
     width: 50%;
 }
 
-.input_data_nasc
+.input_DataFim
 {
     padding-top: 1vw;
     padding-left: 2vw;
