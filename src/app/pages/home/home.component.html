@@ -1,85 +1,106 @@
-<mat-toolbar color="primary" class="expanded-toolbar">
-  <span>
-    <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
-  </span>
-  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/login" >
-      <mat-icon>power_settings_new</mat-icon>
-      Encontre um quarto
-    </button>
-    <button mat-button routerLink="/reserva" >
-      <mat-icon>exit_to_app</mat-icon>
-      Minhas reservas
-    </button>
+<!-- header inner -->
+<header>
+  <div class="header">
+    <div class="container">
+      <div class="full">          
+          <div class="center-desk">
+            <div class="logo">
+              <a href="index.html"><img width="200px" height="50px" src="../../../assets/Images/logo.png" alt="#" /></a>
+            </div>
+          </div>
+
+          <div class="scrollmenu">
+            ...
+            <a href="#home">Home</a>
+            <a href="#news">Reservas</a>
+            <a href="#news">Cadastro</a>
+            ...
+          </div>
+
+          <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+            <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExample04">
+                      <div class="sign_btn"><a href="#">Sair</a></div>
+                </div>
+            </nav>
+          </div>
+      </div>
+    </div>
   </div>
-  <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-    <mat-icon>menu</mat-icon>
-  </button>
-</mat-toolbar>
-<mat-menu x-position="before" #menu="matMenu">
-  <button mat-menu-item >
-    <mat-icon>exit_to_app</mat-icon>
-    Logout
-  </button>
-</mat-menu>
+</header>
+<!-- header inner -->
 
+<!-- banner -->
+<section class="banner_main">
+  <div class="container">
+      <div class="row">
 
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+      </div>
+  </div>
+</section>
+<!-- end banner -->
+<!-- form_lebal -->
+<section>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <form class="form_book">
+              <div class="row">
+                  <div class="col-md-6">
+                    <label class="date">Pesquisar Quarto</label>
+                    <input class="book_n"  type="text" >
+                  </div>
 
-<router-outlet></router-outlet>
+                  <div class="col-md-6">
+                    <button class="book_btn">Buscar</button>
+                  </div>
+              </div>
+            </form>
+        </div>
+      </div>
+  </div>
+</section>
+<!-- end form_lebal -->
+<!-- choose  section -->
+<div class="choose">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="choose_box">
+              <div class="card">
+                <div>
+                  <img class="image" src="money.png" alt="money" />
+                </div>
+                <div>
+                  <h2>Quarto 1 </h2>
+                  <p>UMA Descrição aqui</p>
+                </div>
+              </div>
+         
+              <div class="card">
+                <div>
+                  <img class="image" src="money.png" alt="money" />
+                </div>
+                <div>
+                  <h2>Quarto 1 </h2>
+                  <p>UMA Descrição aqui</p>
+                </div>
+              </div>
+         
+              <div class="card">
+                <div>
+                  <img class="image" src="money.png" alt="money" />
+                </div>
+                <div>
+                  <h2>Quarto 1 </h2>
+                  <p>UMA Descrição aqui</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>

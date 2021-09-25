@@ -1,23 +1,38 @@
-<mat-card>
-  <mat-card-content>
-    <form >
-      <h2>Log In</h2>
-      <mat-error>
-        The username and password were not recognized
-      </mat-error>
-      <mat-form-field class="full-width-input">
-        <input matInput placeholder="Email" formControlName="username" required>
-        <mat-error>
-          Please provide a valid email address
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width-input">
-        <input matInput type="password" placeholder="Password" formControlName="password" required>
-        <mat-error>
-          Please provide a valid password
-        </mat-error>
-      </mat-form-field>
-      <button mat-raised-button color="primary">Login</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="" data-tilt>
+        <img height="400px" width="400px" src="../../../assets/Images/undraw_authentication_fsn5.svg" alt="IMG">
+      </div>
+
+      <form class="login100-form validate-form">
+        <span class="login100-form-title">
+          Faça seu Login
+        </span>
+
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <input class="input100" type="text" name="email" placeholder="Email">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+          <input class="input100" type="password" name="pass" placeholder="Password">
+          <span class="focus-input100"></span>
+        </div>
+        
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn">
+            Login
+          </button>
+        </div>
+
+        <div class="text-center p-t-136">
+          <a class="txt2" href="#">
+            Criar uma conta
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

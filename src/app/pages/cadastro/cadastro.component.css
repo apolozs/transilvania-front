@@ -1,185 +1,217 @@
-.background 
-{
-    height: 100vh;
-    width: 100vw;
-    /* background-color: black; */
+/* Inicio -> Bordas dos botões*/
+input {
+	outline: none;
+	border: none;
 }
 
-.div_nav 
-{
-    height: 60px;
-    width: 100vw;
-    min-width: 1024px;
+textarea {
+  outline: none;
+  border: none;
 }
 
-.texto_cadastro 
-{
-    font-size: 30px;
-    margin-left: 40vw;
+textarea:focus, input:focus {
+  border-color: transparent !important;
 }
 
-.body_content
-{
-    display: flex;
-    height: 92vh;
-    width: 100vw;
-    min-height: 597px;
-    min-width: 1024px;
-    /* background-color: red;  */
-    justify-content: center;
-    align-items: center; 
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
 }
 
-.image_content
-{
-    height: 550px;
-    width: 550px;
-    /* background-color: #f7f0f0;   */
-    
+button:hover {
+	cursor: pointer;
 }
 
-.component_content
-{
-    height: 550px;
-    width: 700px;
-    background-color: #f7f0f0;  
+iframe {
+	border: none !important;
+}
+/* fim -> Bordas dos botões*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
 }
 
-.content_1
-{
-    height: 40%;
-    width: 100%;
-    /* background-color: gray;   */
+.container-login100 {
+  width: 100%;  
+  min-height: 100vh;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: url('../../../assets/Images/banner.jpg');
 }
 
-.first_content
-{
-    height: 100%;
-    width: 100%;
-    /* display: flex; */
-    justify-content: center;
-    align-items: flex-end;
-    /* background-color: yellow;   */
+/*container de */
+.wrap-login100 {
+  width: 960px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 130px 33px 50px;
 }
 
-.div_title_container  
-{
-    display: flex;
-    height: 40%;
-    width: 100%;
-    /* background-color: gray;   */
+/*Imagem login*/
+.login100-pic {
+  width: 316px;
 }
 
-.div_title  
-{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-end;
-    /* background-color: red;   */
+.login100-pic img {
+  max-width: 100%;
 }
 
-.txt_css
-{
-    font-size: 30px;
-    text-align: center;
+/*Formulario login*/
+.login100-form {
+  width: 290px;
 }
 
-.inputs_container
-{
-    height: 60%;
-    width: 100%;
-    /* display: flex; */
-    justify-content: center;
-    align-items: flex-end;
-    /* background-color: red; */
+.login100-form-title {
+  font-family: Poppins-Bold;
+  font-size: 24px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+
+  width: 100%;
+  display: block;
+  padding-bottom: 20px;
 }
 
-.input_nome
-{
-    /* height: 100%; */
-    width: 100%;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    /* background-color: red; */
+.wrap-input100 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 10px;
 }
 
-.input_senha
-{
-    /* height: 100%; */
-    width: 100%;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    /* background-color: red; */
+.input100 {
+  font-family: Poppins-Medium;
+  font-size: 15px;
+  color: #666666;
+
+  display: block;
+  background: #e6e6e6;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px 0 28px;
+}
+
+[ Focus ]*/
+.focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: rgba(87,184,70, 0.8);
+}
+
+ 
+/*[ Button ]*/
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.login100-form-btn {
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  text-transform: uppercase;
+
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background: #57b846;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn:hover {
+  background: #333333;
 }
 
 
-.content_2
-{
-    height: 60%;
-    width: 100%;
-    /* background-color: palevioletred;   */
+/*Alert error*/
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: white;
+  border: 1px solid #c80000;
+  border-radius: 13px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 8px;
+  pointer-events: none;
+
+  font-family: Poppins-Medium;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 
-.second_content
-{
-    height: 100%;
-    width: 100%;
-    /* display: flex; */
-    justify-content: center;
-    align-items: flex-end;
-    /* background-color: yellow;   */
+.alert-validate::after {
+  content: "\f06a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 13px;
 }
 
-.inputs_2
-{
-    height: 30%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    /* background-color: red;   */
-}
-
-.input_cpf
-{
-    padding-top: 1vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    width: 50%;
-}
-
-.input_data_nasc
-{
-    padding-top: 1vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    width: 50%;
-}
-
-.button_container
-{
-    height: 70%;
-    width: 100%;
-    display: flex;
-    /* background-color: blue;  */
-}
-
-.div_button
-{
-    height: 15%;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 2vw;
-    /* background-color: gray;  */
-}
-
-.text_quarto_select
-{
-    justify-content: center;
-    align-items: center;
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
 }
 
