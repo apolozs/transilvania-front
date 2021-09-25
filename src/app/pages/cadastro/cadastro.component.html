@@ -9,27 +9,31 @@
           </span>
 
           <div class="wrap-input100 validate-input" data-validate = "Valid Nome is required: ex@abc.xyz">
-            <input class="input100" type="text" name="Nome" placeholder="Nome">
+            <input class="input100" type="text" name="Nome" placeholder="Nome" [(ngModel)]="Nome">
             <span class="focus-input100"></span>
           </div>
 
           <div class="wrap-input100 validate-input" data-validate = "Valid CPF is required: ex@abc.xyz">
-            <input class="input100" type="text" name="CPF" placeholder="CPF">
+            <input class="input100" type="text" name="CPF" placeholder="CPF" [(ngModel)]="Cpf">
             <span class="focus-input100"></span>
           </div>
-
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-            <input class="input100" type="date" label="email" placeholder="Email">
+          <!-- data que esta com variavek tipo date mais no back esta como string -->
+          <!-- <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <input class="input100" type="date" label="email" placeholder="Data" [(ngModel)]="dataNasc">
+            <span class="focus-input100"></span>
+          </div> -->
+          <div class="wrap-input100 validate-input" data-validate = "Valid Data is required: ex@abc.xyz">
+            <input class="input100" type="text" name="Data Nascimento" placeholder="Data Nascimento" [(ngModel)]="DataNascimento">
             <span class="focus-input100"></span>
           </div>
   
           <div class="wrap-input100 validate-input" data-validate = "Senha is required">
-            <input class="input100" type="password" name="Senha" placeholder="Senha">
+            <input class="input100" type="password" name="Senha" placeholder="Senha" [(ngModel)]="Senha">
             <span class="focus-input100"></span>
           </div>
           
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn">
+            <button class="login100-form-btn" (click)="cadastrar()" >
               Cadastrar
             </button>
           </div>

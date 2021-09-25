@@ -1,4 +1,7 @@
+import { UsuarioService } from './../../services/usuario.service';
+import { Usuario } from './../../models/Usuario';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor() { }
+  Nome!: string;
+  Cpf!: string;
+  DataNascimento!: string;
+  Senha!: string;
 
-  ngOnInit(): void {
+  constructor(private router: Router, private service: UsuarioService) { }
+
+  ngOnInit(): void 
+  {
+  }
+
+  cadastrar(): void
+  {
+    let usuario: Usuario = {
+      Nome: this.Nome,
+      Senha: this.Senha,
+      Cpf: this.Cpf,
+      DataNascimento: this.DataNascimento,
+
+    }
+    this.service.create(usuario).subscribe(usuario => {
+      console.log(usuario)
+      this.router.navigate([""])
+    }
+    );
+    
   }
 
 }

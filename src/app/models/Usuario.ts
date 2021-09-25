@@ -1,7 +1,8 @@
 export interface Usuario {
-  Id: number;
+  Id?: number;
   Nome: string;
   Senha: string;
   Cpf: string;
-  DataNascimento: Date;
+  // DataNascimento: Date;
+  DataNascimento: string;
 }
