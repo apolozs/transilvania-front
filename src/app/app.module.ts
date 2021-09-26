@@ -12,6 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { ReservaComponent } from './pages/reserva/reserva.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { ReservasComponent } from './pages/reservas/reservas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ReservaComponent } from './pages/reserva/reserva.component';
     CadastroComponent,
     HomeComponent,
     InicioComponent,
-    ReservaComponent
+    ReservaComponent,
+    ReservasComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Usuario } from 'src/app/models/Usuario';
+import { usuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -6,10 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
+  
+      
+    Nome!: string;
+    Senha!: string;
+    Cpf!: string;
+    DataNascimento!: string;
+ 
 
-  constructor() { }
+  constructor(private service: usuarioService) { }
 
   ngOnInit(): void {
   }
 
+  update(): void {
+    let usuario : Usuario = 
+    {
+      Nome: this.Nome,
+      Senha: this.Senha,
+      Cpf: this.Cpf,
+      DataNascimento: this.DataNascimento,
+    }
+
+    this.service.update(usuario).subscribe((usuario) => {
+      console.log(usuario)
+      
+    });
+  }
 }

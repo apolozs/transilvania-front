@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import {Usuario} from "../models/Usuario";
 import { Injectable } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
@@ -14,6 +15,10 @@ export class usuarioService {
 
     criar(contato: any){
         return this.http.post(`${this.baseURL}/create`, contato);
+    }
+
+    update(usuario: Usuario): Observable<Usuario[]>{
+        return this.http.put<Usuario[]>(`${this.baseURL}/update`, usuario);
     }
 }
   

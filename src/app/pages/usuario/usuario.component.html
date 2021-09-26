@@ -12,7 +12,8 @@
             <div class="scrollmenu">
               ...
               <a routerLink="/home">Home</a>
-              <a routerLink="/reservas">Reservas</a>
+              <a routerLink="/reserva">Faça sua reserva</a>
+              <a routerLink="/reservas">Suas Reservas</a>
               <a routerLink="/usuario" >Cadastro</a>
               ...
             </div>
@@ -49,26 +50,25 @@
         <div class="row">
           <div class="col-md-6">
               <div class="choose_box">
-                <form action="/">
                   <div class="banner">
                     <h1>Dados cadastrais</h1>
                   </div>
                   <div class="item">
-                    <label for="Name">Nome<span>*</span></label>
+                    <label for="Nome">Nome<span>*</span></label>
                     <div class="item">
-                      <input id="Name" type="text" name="Name" required/>
+                      <input id="Nome" type="text" name="Nome" [(ngModel)]="Nome" required/>
                     </div>
                   </div>
                   <div class="item">
                     <label for="Senha">Senha<span>*</span></label>
-                    <input id="Senha" type="password" name="Senha" required/>
+                    <input id="Senha" type="password" name="Senha" [(ngModel)]="Senha" required/>
                     <i class="fas fa-calendar-alt"></i>
                   </div>
                   <div class="item">
                     <div class="item">
                       <div>
                         <label for="Cpf">Cpf<span>*</span></label>
-                        <input id="Cpf" type="text" name="Cpf" required/>
+                        <input id="Cpf" type="text" name="Cpf" [(ngModel)]="Cpf" required/>
                       </div>
 
                     </div>
@@ -76,16 +76,14 @@
                   <div class="item">
                     <div>
                       <label for="dataNascimento">Data Nascimento</label>
-                      <input id="dataNascimento" type="date" name="dataNascimento" />
+                      <input id="dataNascimento" type="date" name="dataNascimento" [(ngModel)]="DataNascimento"/>
                     </div>
                   </div>
                   
 
                   <div class="btn-block">
-                    <button type="submit" href="/">Gravar</button>
+                    <button type="submit" (click)="update()" >Atualizar</button>
                   </div>
-                </form>
-
               </div>
           </div>
         </div>
