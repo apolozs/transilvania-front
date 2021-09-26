@@ -1,0 +1,219 @@
+/*Menu*/
+
+.full{
+    display: flex;
+  }
+  
+  
+  div.scrollmenu {
+    background-color: #333;
+    overflow: visible;
+    white-space: nowrap;
+  }
+  
+  div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+  
+  
+  .header {
+    width: 100%;
+    background: transparent;
+    padding: 20px 30px;
+    position: absolute;
+  }
+  
+  .logo a {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 40px;
+    padding-right: 40px;
+  }
+  
+  
+  
+  
+  /*Button login */
+  .sign_btn {
+    padding-left: 70%;
+  }
+  
+  .sign_btn a {
+    text-transform: uppercase;
+    background-color: #fff;
+    display: inline-block;
+    padding: 6px 35px;
+    border-radius: 25px;
+    color: #292e39;
+    font-size: 17px;
+  }
+  
+  .sign_btn a:hover {
+    color: #fff;
+    background: #8313dd;
+  }
+  
+  /** banner section **/
+  
+  .form_book {
+    background: #fff;
+    margin-top: -80px;
+    padding: 55px 8px 0px 60px;
+    border-radius: 40px 40px 0px 0px;
+  }
+  
+  .form_book .date {
+    color: #7e7e7e;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding-left: 10px;
+  }
+  
+  .book_n {
+    border: inherit;
+    border-radius: 20px;
+    background-color: #eeeeee;
+    width: 100%;
+    font-size: 16px;
+    height: auto;
+    line-height: normal;
+    padding: 10px 20px;
+     -webkit-appearance: none !important;
+  }
+  
+  
+  .book_btn {
+    font-size: 17px;
+    background-color: #333;
+    color: #fff;
+    font-weight: 500;
+    padding: 5px 0px;
+    width: 100%;
+    max-width: 161px;
+    text-align: center;
+    display: inline-block;
+    transition: ease-in all 0.5s;
+    border-radius: 10px;
+    margin-top: 33px;
+  }
+  
+  .book_btn:hover {
+    background-color: #8313dd;
+    color: #fff;
+    transition: ease-in all 0.5s;
+    border-radius: 25px
+  }
+  
+  
+  /** banner section **/
+  
+  .banner_main {
+    background: url('../../../assets/Images/banner.jpg');
+    background-repeat: no-repeat;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-size: 100% 100%;
+  }
+  
+  .text-bg {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  
+  .text-bg h1 {
+    color: #fff;
+    font-size: 50px;
+    line-height: 50px;
+    padding-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .text-bg span {
+    color: #fff;
+    font-size: 45px;
+    line-height: 50px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    display: block;
+  }
+  
+  .text-bg p {
+    color: #fff;
+    font-size: 17px;
+    line-height: 28px;
+    padding-bottom: 60px;
+  }
+  
+  .text-bg a {
+    font-size: 17px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+    padding: 13px 0px;
+    width: 100%;
+    max-width: 190px;
+    text-align: center;
+    display: inline-block;
+    transition: ease-in all 0.5s;
+    border-radius: 10px
+  }
+  
+  .text-bg a:hover {
+    background-color: #8313dd;
+    color: #fff;
+    transition: ease-in all 0.5s;
+    border-radius: 25px
+  }
+  
+  .titlepage {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  
+  .titlepage h2 {
+    font-size: 55px;
+    color: #313131;
+    line-height: 60px;
+    font-weight: bold;
+    padding: 0;
+  }
+  
+  .d_flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  
+  
+  
+  
+  /** Choose  section **/
+  
+  .choose {
+    margin-top: 10px;
+  }
+  
+  .choose_box {
+    padding-top: 30px;
+  }
+  
+  /** end Choose  section **/
+  
+  
+  

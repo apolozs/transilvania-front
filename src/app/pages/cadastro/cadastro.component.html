@@ -1,43 +1,44 @@
 <div class="limiter">
-    <div class="container-login100">
-      <div class="wrap-login100">
+  <div class="container-login100">
+    <div class="wrap-login100">
 
-  
-        <form class="login100-form validate-form">
-          <span class="login100-form-title">
-            Cadastro
-          </span>
+      <form class="login100-form validate-form" method="post" #frm="ngForm" (ngSubmit)="criar(frm)">
+        <span class="login100-form-title">
+          Cadastro
+        </span>
 
-          <div class="wrap-input100 validate-input" data-validate = "Valid Nome is required: ex@abc.xyz">
-            <input class="input100" type="text" name="Nome" placeholder="Nome">
-            <span class="focus-input100"></span>
-          </div>
+        <div class="wrap-input100 validate-input" >
+          <input id="Nome" class="input100" type="text" name="Nome" placeholder="Nome"
+          [(ngModel)]="usuario.Nome" required>
+        </div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Valid CPF is required: ex@abc.xyz">
-            <input class="input100" type="text" name="CPF" placeholder="CPF">
-            <span class="focus-input100"></span>
-          </div>
+        <div class="wrap-input100 validate-input">
+          <input id="Cpf" class="input100" type="text" name="CPF" placeholder="CPF"
+          [(ngModel)]="usuario.Cpf" required>
+        </div>
 
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-            <input class="input100" type="date" label="email" placeholder="Email">
-            <span class="focus-input100"></span>
-          </div>
-  
-          <div class="wrap-input100 validate-input" data-validate = "Senha is required">
-            <input class="input100" type="password" name="Senha" placeholder="Senha">
-            <span class="focus-input100"></span>
-          </div>
-          
-          <div class="container-login100-form-btn">
-            <button class="login100-form-btn">
-              Cadastrar
-            </button>
-          </div>
+        <div class="wrap-input100 validate-input">
+          <input id="DataNascimento" class="input100" type="date" name="dataNascimento" placeholder="dataNascimento"
+          [(ngModel)]="usuario.DataNascimento" required>
+        </div>
 
-        </form>
-        <div class="" data-tilt>
-          <img height="300px" width="300px" src="../../../assets/Images/undraw_authentication_fsn5.svg" alt="IMG">
-        </div>        
-      </div>
+
+        <div class="wrap-input100 validate-input" >
+          <input id="Senha" class="input100" type="password" name="Senha" placeholder="Senha"
+          [(ngModel)]="usuario.Senha" required>
+        </div>
+        
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn"
+            [disabled]="frm.invalid">
+            Cadastrar
+          </button>
+        </div>
+
+      </form>
+      <div class="" data-tilt>
+        <img height="300px" width="300px" src="../../../assets/Images/undraw_authentication_fsn5.svg" alt="IMG">
+      </div>        
     </div>
   </div>
+</div>

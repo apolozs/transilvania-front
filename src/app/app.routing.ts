@@ -5,6 +5,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReservaComponent } from './pages/reserva/reserva.component';
+import { ReservasComponent } from './pages/reservas/reservas.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 declare module "@angular/core" {
     interface ModuleWithProviders<T = any> {
@@ -16,9 +18,12 @@ declare module "@angular/core" {
 const APP_ROUTES: Routes = [
     { path: 'login', component:LoginComponent},
     { path: 'cadastro', component:CadastroComponent},
-    { path: 'home', component:HomeComponent},
     { path: 'reserva', component:ReservaComponent},
-    { path: '', component:InicioComponent}
+    { path: 'reservas', component:ReservasComponent},
+    { path: 'usuario', component:UsuarioComponent},
+    { path: '', component:InicioComponent}, 
+
+    { path: 'home', component:HomeComponent},
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);  
