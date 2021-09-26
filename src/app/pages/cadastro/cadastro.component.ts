@@ -32,7 +32,7 @@ export class CadastroComponent implements OnInit {
     console.log(this.usuario)
     this.service.criar(this.usuario).subscribe(resposta => {
       console.log('teste')
-
+      
       frm.reset();
     });
   }

@@ -49,11 +49,42 @@
         <div class="row">
           <div class="col-md-6">
               <div class="choose_box">
-                
+                <div class="banner">
+                  <h1>Faça sua reserva aqui !</h1>
+                </div>
+                <div class="item">
+                  <label for="Name">Nome<span></span></label>
+                  <div class="item">
+                    <input id="Name" type="text" name="Name" required/>
+                  </div>
+                </div>
+                <div class="item">
+                  <label for="Quarto">Quarto<span></span></label>
+                  <select id="Quarto" name="Quarto" required data-live-search="true">
+                    <option>Escolha seu quarto</option>
+                    <option>Quarto 1</option>
+                    <option>Quarto 2</option>
+                  </select>
+                  
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="item">
+                  <div>
+                    <label for="dataInicio">Data de inicio</label>
+                    <input id="dataInicio" type="date" name="dataInicio"/>
+                  </div>
+                </div>
+                <div class="item">
+                  <div>
+                    <label for="dataFim">Data de fim</label>
+                    <input id="dataFim" type="date" name="dataFim"/>
+                  </div>
+                </div>
                 
 
-                reservaaa
-
+                <div class="btn-block">
+                  <button type="submit" href="/">Reservar</button>
+                </div>
 
 
               </div>
