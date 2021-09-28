@@ -10,10 +10,10 @@ import { QuartoService } from '../../services/quarto.service';
 export class HomeComponent implements OnInit {
   quartos : Quarto[] = [];
 
-  constructor(private servive: QuartoService) { }
+  constructor(private service: QuartoService) { }
 
   ngOnInit(): void {
-    this.servive.list().subscribe((quarto) => { 
+    this.service.list().subscribe((quarto) => { 
       this.quartos = quarto;
       console.log(quarto)
     })

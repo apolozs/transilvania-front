@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Quarto } from 'src/app/models/Quarto';
+import { QuartoService } from 'src/app/services/quarto.service';
 
 @Component({
   selector: 'app-reserva',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservaComponent implements OnInit {
 
-  constructor() { }
+  quartos : Quarto[] = [];
+
+    Nome!: string;
+    // Senha!: string;
+    // Cpf!: string;
+    // DataNascimento!: string;
+    // onKey(ReservaComponent) {const inputValue = ReservaComponent.;}
+   
+  constructor(private service: QuartoService) { }
 
   ngOnInit(): void {
+    this.service.list().subscribe((quarto) => { 
+      this.quartos = quarto;
+      console.log(quarto)
+    })
+    console.log(this.quartos)
   }
 
 }

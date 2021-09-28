@@ -54,19 +54,15 @@
                   <h1>Faça sua reserva aqui !</h1>
                 </div>
                 <div class="item">
-                  <label for="Name">Nome<span></span></label>
+                  <label for="Nome">Nome<span></span></label>
                   <div class="item">
-                    <input id="Name" type="text" name="Name" required/>
+                    <input id="Nome" type="text" name="Nome" [(ngModel)]="Nome" disabled />
+                    <!-- <input id="Nome" type="text" name="Nome" [(ngModel)]="quartos.nomeQuarto " disabled /> -->
                   </div>
                 </div>
                 <div class="item">
                   <label for="Quarto">Quarto<span></span></label>
-                  <select id="Quarto" name="Quarto" required data-live-search="true">
-                    <option>Escolha seu quarto</option>
-                    <option>Quarto 1</option>
-                    <option>Quarto 2</option>
-                  </select>
-                  
+                    <input id="Quarto" type="text" name="Quarto"  disabled />  
                   <i class="fas fa-calendar-alt"></i>
                 </div>
                 <div class="item">
