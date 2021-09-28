@@ -1,50 +1,33 @@
-import { Login } from './../models/Login';
-import { Observable } from 'rxjs';
-import {Usuario} from "../models/Usuario";
-import { Injectable } from '@angular/core';
-import { HttpClient} from "@angular/common/http";
-
+import { Login } from "./../models/Login";
+import { Observable } from "rxjs";
+import { Usuario } from "../models/Usuario";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { catchError, map, tap } from "rxjs/operators";
+import { HttpClientModule } from "@angular/common/http";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: "root",
 })
-
 export class usuarioService {
+  private usuarioAutenticado: boolean = false;
+  private baseURL = "https://localhost:5001/api/usuario";
+  private variavel: Login = { Cpf: "", Senha: "" };
 
-    private usuarioAutenticado: boolean = false;
-    private baseURL = "https://localhost:5001/api/usuario";
+  constructor(private http: HttpClient) {}
 
-    private variavel:  Login = 
-    {
-      Senha: '',
-      Cpf: ''
-    }
+  criar(contato: any) {
+    return this.http.post(`${this.baseURL}/create`, contato);
+  }
 
-    constructor(private http: HttpClient) { }
+  update(usuario: Usuario): Observable<Usuario[]> {
+    return this.http.put<Usuario[]>(`${this.baseURL}/update`, usuario);
+  }
 
-    criar(contato: any){
-        return this.http.post(`${this.baseURL}/create`, contato);
-    }
-
-    update(usuario: Usuario): Observable<Usuario[]>{
-        return this.http.put<Usuario[]>(`${this.baseURL}/update`, usuario);
-    }
-
-    // login(login: Login): Observable<Login> 
-    // {
-      
-        // try {
-            
-        // } catch (error) {
-            
-        // }
-    //   return this.http.get<Login>(`${this.baseURL}/login/${login.Cpf}/${login.Senha}`).subscribe(result => this.variavel = result  );
-                    
-
-    
-    }
-        
-
-
-// }
-  
+  /** GET heroes from the server */
+  login(login: Login): Observable<Login> {
+    return this.http.get<Login>(
+      `${this.baseURL}/login/${login.Cpf}/${login.Senha}`
+    );
+  }
+}
