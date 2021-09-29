@@ -12,20 +12,20 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
   usuario: Usuario = {      
-    Nome: '',
-    Senha: '',
-    Cpf: '',
-    DataNascimento: '' 
+    nome: '',
+    senha: '',
+    cpf: '',
+    dataNascimento: '' 
   };
 
   constructor(private service: usuarioService, private router: Router) { }
 
   ngOnInit(): void {
     this.usuario = {
-      Nome: '',
-      Senha: '',
-      Cpf: '',
-      DataNascimento: ''
+      nome: '',
+      senha: '',
+      cpf: '',
+      dataNascimento: ''
     };    
   }
 

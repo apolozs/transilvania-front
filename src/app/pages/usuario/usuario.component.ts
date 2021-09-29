@@ -25,11 +25,11 @@ export class UsuarioComponent implements OnInit {
   update(): void {
     let usuario : Usuario = 
     {
-      Id: this.id,
-      Nome: this.Nome,
-      Senha: this.Senha,
-      Cpf: this.Cpf,
-      DataNascimento: this.DataNascimento,
+      id: this.id,
+      nome: this.Nome,
+      senha: this.Senha,
+      cpf: this.Cpf,
+      dataNascimento: this.DataNascimento,
     }
 
     this.service.update(usuario).subscribe((usuario) => {

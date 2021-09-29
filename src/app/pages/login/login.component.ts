@@ -13,11 +13,12 @@ export class LoginComponent implements OnInit {
   cpf!: string;
   senha!: string;
   acesso: Login = { Cpf: "", Senha: "" };
-  usuario: Usuario = {      
-    Nome: 'batata',
-    Senha: 'pasta',
-    Cpf: '123',
-    DataNascimento: '12/12/12' 
+  usuario: Usuario = {  
+    id: 1,    
+    nome: 'batata',
+    senha: 'pasta',
+    cpf: '123',
+    dataNascimento: '2000-06-19T00:00:00' 
   };
 
   constructor(private router: Router, private service: usuarioService) {}
@@ -30,22 +31,28 @@ export class LoginComponent implements OnInit {
       Cpf: this.cpf,
     };
 
-    this.service.login(login).subscribe(
-      (userInfos) => {
-        console.log(this.usuario.Nome);
-        let navigationExtras: NavigationExtras = {
-          queryParams: 
-          {
-           user: this.usuario
-          }
-      };
-      this.router.navigate(['/home'], navigationExtras);
+    this.service.login(login).subscribe((userInfos) => {
+     
+     
+      this.usuario = userInfos
+      let navigationExtras: NavigationExtras = {
+        queryParams: 
+        {
         
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+        "Nome": this.usuario.nome,
+        "Senha": this.usuario.senha,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
+          
+        }
+    };
+    this.router.navigate(['/home'], navigationExtras);
+      
+    });
+   
+
+  
   }
 
   goToLogin() {
