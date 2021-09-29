@@ -1,3 +1,4 @@
+import { PerfilComponent } from './pages/perfil/perfil.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,6 +22,7 @@ const APP_ROUTES: Routes = [
     { path: 'reserva', component:ReservaComponent},
     { path: 'reservas', component:ReservasComponent},
     { path: 'usuario', component:UsuarioComponent},
+    { path: 'perfil', component:PerfilComponent},
     { path: '', component:InicioComponent}, 
 
     { path: 'home', component:HomeComponent},

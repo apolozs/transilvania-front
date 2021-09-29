@@ -1,7 +1,8 @@
 import { usuarioService } from "src/app/services/usuario.service";
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { NavigationExtras, Router } from "@angular/router";
 import { Login } from "src/app/models/Login";
+import { Usuario } from "src/app/models/Usuario";
 
 @Component({
   selector: "app-login",
@@ -12,6 +13,12 @@ export class LoginComponent implements OnInit {
   cpf!: string;
   senha!: string;
   acesso: Login = { Cpf: "", Senha: "" };
+  usuario: Usuario = {      
+    Nome: 'batata',
+    Senha: 'pasta',
+    Cpf: '123',
+    DataNascimento: '12/12/12' 
+  };
 
   constructor(private router: Router, private service: usuarioService) {}
 
@@ -24,10 +31,16 @@ export class LoginComponent implements OnInit {
     };
 
     this.service.login(login).subscribe(
-      (Bolinho) => {
-        this.acesso = Bolinho;
-        console.log(this.acesso);
-        this.router.navigate(["/home"]);
+      (userInfos) => {
+        console.log(this.usuario.Nome);
+        let navigationExtras: NavigationExtras = {
+          queryParams: 
+          {
+           user: this.usuario
+          }
+      };
+      this.router.navigate(['/home'], navigationExtras);
+        
       },
       (error) => {
         console.error(error);

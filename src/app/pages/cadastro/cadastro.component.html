@@ -18,8 +18,11 @@
         </div>
 
         <div class="wrap-input100 validate-input">
-          <input id="DataNascimento" class="input100" type="date" name="dataNascimento" placeholder="dataNascimento"
+          <input placeholder="data de nascimento" id="DataNascimento" class="input100" type="text" onfocus="(this.type='date')" name="dataNascimento" 
           [(ngModel)]="usuario.DataNascimento" required>
+          <!-- <input placeholder="data de nascimento" id="DataNascimento" class="input100" type="date" name="dataNascimento" 
+          [(ngModel)]="usuario.DataNascimento" required> -->
+          <!-- <input placeholder="Data Inicial" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"> -->
         </div>
 
 

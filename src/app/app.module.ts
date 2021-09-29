@@ -14,6 +14,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { ReservaComponent } from './pages/reserva/reserva.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { ReservasComponent } from './pages/reservas/reservas.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReservasComponent } from './pages/reservas/reservas.component';
     InicioComponent,
     ReservaComponent,
     ReservasComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
+import { Usuario } from 'src/app/models/Usuario';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Quarto } from '../../models/Quarto';
 import { QuartoService } from '../../services/quarto.service';
 
@@ -10,13 +12,25 @@ import { QuartoService } from '../../services/quarto.service';
 export class HomeComponent implements OnInit {
   quartos : Quarto[] = [];
 
-  constructor(private service: QuartoService) { }
+  public firstname: string = "";
+  public lastname: string = "";
+
+  constructor(private router: Router,private service: QuartoService, private route: ActivatedRoute) 
+  {
+    this.route.queryParams.subscribe(params => {
+      console.log(params.Nome)
+  });
+  }
 
   ngOnInit(): void {
     this.service.list().subscribe((quarto) => { 
       this.quartos = quarto;
       console.log(quarto)
     })
+    
+    // let usuario: Usuario = this.router.getCurrentNavigation().extras.state
+    // console.log(usuario)
+
   }
 
 }

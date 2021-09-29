@@ -25,8 +25,8 @@ export class usuarioService {
   }
 
   /** GET heroes from the server */
-  login(login: Login): Observable<Login> {
-    return this.http.get<Login>(
+  login(login: Login): Observable<Usuario> {
+    return this.http.get<Usuario>(
       `${this.baseURL}/login/${login.Cpf}/${login.Senha}`
     );
   }

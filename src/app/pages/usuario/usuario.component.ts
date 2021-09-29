@@ -10,7 +10,7 @@ import { usuarioService } from 'src/app/services/usuario.service';
 })
 export class UsuarioComponent implements OnInit {
   
-      
+    id!: number;  
     Nome!: string;
     Senha!: string;
     Cpf!: string;
@@ -25,6 +25,7 @@ export class UsuarioComponent implements OnInit {
   update(): void {
     let usuario : Usuario = 
     {
+      Id: this.id,
       Nome: this.Nome,
       Senha: this.Senha,
       Cpf: this.Cpf,
