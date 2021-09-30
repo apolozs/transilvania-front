@@ -30,4 +30,8 @@ export class usuarioService {
       `${this.baseURL}/login/${login.Cpf}/${login.Senha}`
     );
   }
+
+  delete(id: any): Observable<Usuario> {
+    return this.http.delete<Usuario>(`${this.baseURL}/delete/${id}`);
+  }
 }

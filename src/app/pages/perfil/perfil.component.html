@@ -14,7 +14,7 @@
               <a routerLink="/home">Home</a>
               <a routerLink="/reserva">Faça sua reserva</a>
               <a routerLink="/reservas">Suas Reservas</a>
-              <a routerLink="/usuario" >Atualizar Cadastro</a>
+              <a (click)="passToAtualizar()" >Atualizar Cadastro</a>
               <a routerLink="/perfil" >Perfil</a>
               ...
             </div>
@@ -57,24 +57,24 @@
                 <div class="item">
                   <label for="Nome">Nome<span></span></label>
                   <div class="item">
-                    <input id="Nome" type="text" name="Nome" disabled />
+                    <input id="Nome" type="text" name="Nome" placeholder="{{usuario.nome}}" disabled />
                   </div>
                 </div>
                 <div class="item">
                     <label for="cpf">CPF<span></span></label>
                     <div class="item">
-                      <input id="cpf" type="text" name="cpf" disabled />
+                      <input id="cpf" type="text" name="cpf" placeholder="{{usuario.cpf}}" disabled />
                     </div>
                   </div>
                   <div class="item">
                     <label for="DataNasc">Data de nascimento<span></span></label>
                     <div class="item">
-                      <input id="DataNasc" type="text" name="DataNasc" disabled />
+                      <input id="DataNasc" type="text" name="DataNasc" placeholder="{{usuario.dataNascimento}}" disabled />
                     </div>
                   </div>
 
                 <div class="btn-block">
-                  <button type="submit" href="/">Deletar Conta</button>
+                  <button type="submit" (click)="delete()" >Deletar Conta</button>
                 </div>
 
 

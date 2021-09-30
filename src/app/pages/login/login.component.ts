@@ -15,10 +15,10 @@ export class LoginComponent implements OnInit {
   acesso: Login = { Cpf: "", Senha: "" };
   usuario: Usuario = {  
     id: 1,    
-    nome: 'batata',
-    senha: 'pasta',
-    cpf: '123',
-    dataNascimento: '2000-06-19T00:00:00' 
+    nome: '',
+    senha: '',
+    cpf: '',
+    dataNascimento: '' 
   };
 
   constructor(private router: Router, private service: usuarioService) {}
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         {
         
         "Nome": this.usuario.nome,
-        "Senha": this.usuario.senha,
+        // "Senha": this.usuario.senha,
         "Cpf": this.usuario.cpf,
         "DataNascimento": this.usuario.dataNascimento,
         "Id": this.usuario.id

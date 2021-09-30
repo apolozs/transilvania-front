@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/Usuario';
 import { usuarioService } from 'src/app/services/usuario.service';
 
@@ -15,9 +16,28 @@ export class UsuarioComponent implements OnInit {
     Senha!: string;
     Cpf!: string;
     DataNascimento!: string;
+
+    usuario: Usuario = {      
+      nome: '',
+      senha: '',
+      cpf: '',
+      dataNascimento: '' 
+    };
  
 
-  constructor(private service: usuarioService) { }
+  constructor(private service: usuarioService, private router: Router, private route: ActivatedRoute) 
+  {
+    this.route.queryParams.subscribe(params => {
+   
+      this.usuario.id = params["Id"]
+      this.usuario.nome = params["Nome"]
+      this.usuario.cpf = params["Cpf"]
+      this.usuario.senha = params["Senha"]
+      this.usuario.dataNascimento = params["DataNascimento"]
+     
+      console.log(this.usuario);
+  });
+  }
 
   ngOnInit(): void {
   }
@@ -37,4 +57,21 @@ export class UsuarioComponent implements OnInit {
       
     });
   }
+
+  passToPerfil () 
+  {
+    let informacoes: NavigationExtras = {
+      queryParams: 
+      {
+      
+      "Nome": this.usuario.nome,
+      "Cpf": this.usuario.cpf,
+      "DataNascimento": this.usuario.dataNascimento,
+      "Id": this.usuario.id
+      
+      }
+  }
+
+  this.router.navigate(['/perfil'], informacoes);
+ }
 }

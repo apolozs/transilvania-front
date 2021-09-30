@@ -1,8 +1,8 @@
 export interface Quarto {
-  Id: number;
-  NomeQuarto: string;
-  QuantidadeDeCamas: number;
-  TipoDeCamas: string;
-  ImagemQuarto: string;
-  Preco: number;
+  id?: number;
+  nomeQuarto: string;
+  quantidadeDeCamas: number;
+  tipoDeCamas: string;
+  imagemQuarto: string;
+  preco: number;
 }

@@ -1,6 +1,6 @@
 import { Usuario } from 'src/app/models/Usuario';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Quarto } from '../../models/Quarto';
 import { QuartoService } from '../../services/quarto.service';
 
@@ -11,6 +11,14 @@ import { QuartoService } from '../../services/quarto.service';
 })
 export class HomeComponent implements OnInit {
   quartos : Quarto[] = [];
+
+  // quarto : Quarto = 
+  // {
+  //   nomeQuarto: '',
+  //   tipoDeCamas: '',
+  //   imagemQuarto: '',
+  //   preco:''
+  // };
 
   usuario: Usuario = {      
     nome: '',
@@ -31,14 +39,40 @@ export class HomeComponent implements OnInit {
      
       console.log(this.usuario);
   });
+  this.route.queryParams.subscribe(params => {
+   
+    this.quartos= params["Id"]
+  
+   
+    console.log(this.usuario);
+});
   }
 
   ngOnInit(): void {
     this.service.list().subscribe((quarto) => { 
       this.quartos = quarto;
       console.log(quarto)
+      console.log("BATATA", this.usuario)
     })
 
+  }
+
+  passToPerfil () 
+  {
+    let informacoes: NavigationExtras = {
+      queryParams: 
+      {
+      
+      "Nome": this.usuario.nome,
+      "Cpf": this.usuario.cpf,
+      "DataNascimento": this.usuario.dataNascimento,
+      "Id": this.usuario.id
+      
+      }
+  }
+
+
+    this.router.navigate(['/perfil'], informacoes);
   }
 
 }
