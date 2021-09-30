@@ -12,14 +12,6 @@ import { QuartoService } from '../../services/quarto.service';
 export class HomeComponent implements OnInit {
   quartos : Quarto[] = [];
 
-  // quarto : Quarto = 
-  // {
-  //   nomeQuarto: '',
-  //   tipoDeCamas: '',
-  //   imagemQuarto: '',
-  //   preco:''
-  // };
-
   usuario: Usuario = {      
     nome: '',
     senha: '',
@@ -52,12 +44,43 @@ export class HomeComponent implements OnInit {
     this.service.list().subscribe((quarto) => { 
       this.quartos = quarto;
       console.log(quarto)
-      console.log("BATATA", this.usuario)
     })
-
   }
 
+
+  ///REDIRECIONAMENTO INICIO
   passToPerfil () 
+  {
+    let informacoes: NavigationExtras = {
+        queryParams: 
+        {
+        
+        "Nome": this.usuario.nome,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
+        
+        }
+    }
+    this.router.navigate(['/perfil'], informacoes);
+  }
+
+  passToSuasReservas () 
+  {
+    let informacoes: NavigationExtras = {
+        queryParams: 
+        {
+        
+        "Nome": this.usuario.nome,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
+        
+        }
+    }
+    this.router.navigate(['/reservas'], informacoes);
+  }
+  passToAtualizar () 
   {
     let informacoes: NavigationExtras = {
       queryParams: 
@@ -67,12 +90,12 @@ export class HomeComponent implements OnInit {
       "Cpf": this.usuario.cpf,
       "DataNascimento": this.usuario.dataNascimento,
       "Id": this.usuario.id
-      
       }
-  }
+    }
 
-
-    this.router.navigate(['/perfil'], informacoes);
+    this.router.navigate(['/usuario'], informacoes);
   }
+  ///REDIRECIONAMENTO FIM 
+
 
 }
