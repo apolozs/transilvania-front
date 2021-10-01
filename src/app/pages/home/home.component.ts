@@ -130,4 +130,21 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/reservas'], informacoes);
   }
 
+  passToHome(){
+    let navigationExtras: NavigationExtras = {
+      queryParams: 
+      {
+      
+      "Nome": this.usuario.nome,
+      // "Senha": this.usuario.senha,
+      "Cpf": this.usuario.cpf,
+      "DataNascimento": this.usuario.dataNascimento,
+      "Id": this.usuario.id
+        
+      }
+    };
+      this.router.navigate(['/home'], navigationExtras);
+    
+    }
+
 }

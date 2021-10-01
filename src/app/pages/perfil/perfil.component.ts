@@ -59,6 +59,52 @@ export class PerfilComponent implements OnInit {
 
   this.router.navigate(['/usuario'], informacoes);
  }
+
+ passToReservas(){
+  let informacoes: NavigationExtras = {
+    queryParams: 
+    {
+    "IdUsuario": this.usuario.id,
+    }
+}
+
+
+  // console.log("BATATA", id,)
+  this.router.navigate(['/reservas'], informacoes);
+}
+
+passToHome(){
+  let navigationExtras: NavigationExtras = {
+    queryParams: 
+    {
+    
+    "Nome": this.usuario.nome,
+    // "Senha": this.usuario.senha,
+    "Cpf": this.usuario.cpf,
+    "DataNascimento": this.usuario.dataNascimento,
+    "Id": this.usuario.id
+      
+    }
+  };
+    this.router.navigate(['/home'], navigationExtras);
+  
+  }
+
+  passToPerfil () 
+  {
+    let informacoes: NavigationExtras = {
+        queryParams: 
+        {
+        
+        "Nome": this.usuario.nome,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
+        
+        }
+    }
+    this.router.navigate(['/perfil'], informacoes);
+  }
  
 
 

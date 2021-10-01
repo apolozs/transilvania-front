@@ -43,15 +43,32 @@ export class ReservasComponent implements OnInit {
     })
   }
 
-  passToReservas(){
+  passToPerfil(){
     let informacoes: NavigationExtras = {
       queryParams: 
       {
       "IdUsuario": this.usuario.id,
       }
   }
-  this.router.navigate(['/reservas'], informacoes);
+  this.router.navigate(['/perfil'], informacoes);
  }
+
+ passToHome(){
+  let navigationExtras: NavigationExtras = {
+    queryParams: 
+    {
+    
+    "Nome": this.usuario.nome,
+    // "Senha": this.usuario.senha,
+    "Cpf": this.usuario.cpf,
+    "DataNascimento": this.usuario.dataNascimento,
+    "Id": this.usuario.id
+      
+    }
+  };
+    this.router.navigate(['/home'], navigationExtras);
+  
+  }
 
  delete(idReserva: any): void {
 
@@ -61,5 +78,21 @@ export class ReservasComponent implements OnInit {
     this.router.navigate(['/home']);
   });
 }
+
+
+passToReservas(){
+  let informacoes: NavigationExtras = {
+    queryParams: 
+    {
+    "IdUsuario": this.usuario.id,
+    }
+}
+
+
+  // console.log("BATATA", id,)
+  this.router.navigate(['/reservas'], informacoes);
+}
+
+
 
 }

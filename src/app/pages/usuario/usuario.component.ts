@@ -74,4 +74,38 @@ export class UsuarioComponent implements OnInit {
 
   this.router.navigate(['/perfil'], informacoes);
  }
+
+ passToHome(){
+  let navigationExtras: NavigationExtras = {
+    queryParams: 
+    {
+    
+    "Nome": this.usuario.nome,
+    // "Senha": this.usuario.senha,
+    "Cpf": this.usuario.cpf,
+    "DataNascimento": this.usuario.dataNascimento,
+    "Id": this.usuario.id
+      
+    }
+  };
+    this.router.navigate(['/home'], navigationExtras);
+  
+  }
+
+
+  passToReservas(){
+    let informacoes: NavigationExtras = {
+      queryParams: 
+      {
+      "IdUsuario": this.usuario.id,
+      }
+  }
+  
+
+    // console.log("BATATA", id,)
+    this.router.navigate(['/reservas'], informacoes);
+  }
+
+
+
 }
