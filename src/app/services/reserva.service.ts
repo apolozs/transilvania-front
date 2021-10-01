@@ -27,7 +27,11 @@ export class ReservaService {
       console.log(resolve)
     })
     return this.listReserva
-}
+  }
+
+  delete(id: any): Observable<Reserva> {
+    return this.http.delete<Reserva>(`${this.baseURL}/delete/${id}`);
+  }
 
 
   // list(): Observable<Quarto[]> {

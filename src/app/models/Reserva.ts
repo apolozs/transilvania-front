@@ -8,6 +8,6 @@ export interface Reserva {
   // Usuario?: Usuario;
   Usuario?:{ id: number };
   Adicionais?: Adicionais[];
-  checkIn: Date;
-  checkOut: Date;
+  checkIn?: Date;
+  checkOut?: Date;
 }

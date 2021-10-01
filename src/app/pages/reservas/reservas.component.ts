@@ -14,6 +14,11 @@ export class ReservasComponent implements OnInit {
 
   reservas : Reserva[] = [];
 
+  // reserva: Reserva = {      
+  //   Id:0
+  // };
+
+
   usuario: Usuario = {      
     nome: '',
     senha: '',
@@ -47,4 +52,14 @@ export class ReservasComponent implements OnInit {
   }
   this.router.navigate(['/reservas'], informacoes);
  }
+
+ delete(idReserva: any): void {
+
+  this.serviceReserva.delete(idReserva).subscribe((reserva) => 
+  {      
+    console.log(reserva)
+    this.router.navigate(['/home']);
+  });
+}
+
 }
