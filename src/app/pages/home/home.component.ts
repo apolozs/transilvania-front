@@ -48,10 +48,42 @@ export class HomeComponent implements OnInit {
       // console.log(quarto)
       // console.log("BATATA", this.usuario)
     })
-
   }
 
+
+  ///REDIRECIONAMENTO INICIO
   passToPerfil () 
+  {
+    let informacoes: NavigationExtras = {
+        queryParams: 
+        {
+        
+        "Nome": this.usuario.nome,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
+        
+        }
+    }
+    this.router.navigate(['/perfil'], informacoes);
+  }
+
+  passToSuasReservas () 
+  {
+    let informacoes: NavigationExtras = {
+        queryParams: 
+        {
+        
+        "Nome": this.usuario.nome,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
+        
+        }
+    }
+    this.router.navigate(['/reservas'], informacoes);
+  }
+  passToAtualizar () 
   {
     let informacoes: NavigationExtras = {
       queryParams: 
@@ -61,13 +93,13 @@ export class HomeComponent implements OnInit {
       "Cpf": this.usuario.cpf,
       "DataNascimento": this.usuario.dataNascimento,
       "Id": this.usuario.id
-      
       }
-  }
+    }
 
-
-    this.router.navigate(['/perfil'], informacoes);
+    this.router.navigate(['/usuario'], informacoes);
   }
+  ///REDIRECIONAMENTO FIM 
+
 
   passToReserva(id: any, nomeQuarto: any ){
     let informacoes: NavigationExtras = {
