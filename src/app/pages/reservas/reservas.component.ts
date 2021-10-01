@@ -38,7 +38,7 @@ export class ReservasComponent implements OnInit {
     })
   }
 
-  passToHome(){
+  passToReservas(){
     let informacoes: NavigationExtras = {
       queryParams: 
       {

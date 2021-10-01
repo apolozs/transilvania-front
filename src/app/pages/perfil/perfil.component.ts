@@ -23,7 +23,6 @@ export class PerfilComponent implements OnInit {
   constructor(private route: ActivatedRoute, private service: usuarioService, private router: Router) 
   {
     this.route.queryParams.subscribe(params => {
-   
       this.usuario.id = params["Id"]
       this.usuario.nome = params["Nome"]
       this.usuario.cpf = params["Cpf"]
