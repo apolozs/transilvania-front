@@ -35,7 +35,7 @@ export class UsuarioComponent implements OnInit {
       this.usuario.senha = params["Senha"]
       this.usuario.dataNascimento = params["DataNascimento"]
      
-      console.log(this.usuario);
+      // console.log(this.usuario);
   });
   }
 
@@ -53,7 +53,7 @@ export class UsuarioComponent implements OnInit {
     }
 
     this.service.update(usuario).subscribe((usuario) => {
-      console.log(usuario)
+      // console.log(usuario)
       
     });
   }

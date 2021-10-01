@@ -12,9 +12,9 @@
           <div class="scrollmenu">
             ...
             <a routerLink="/home">Home</a>
-            <a routerLink="/reserva">Faça sua reserva</a>
-            <a routerLink="/reservas">Suas Reservas</a>
-            <a routerLink="/usuario" >Atualizar Cadastro</a>
+            <!-- <a routerLink="/reserva">Faça sua reserva</a> -->
+            <a (click)="passToReservas()">Suas Reservas</a>
+            <a (click)="passToReservas()" >Atualizar Cadastro</a>
             <a (click)="passToPerfil()" >Perfil</a>
             ...
           </div>
@@ -65,7 +65,7 @@
                   <p>Preço: {{ quarto.preco}}</p>
                 </div>
                 
-                <a routerLink="/reserva" class="myButton">Alugar</a>
+                <a (click)="passToReserva(quarto.id, quarto.nomeQuarto)" class="myButton">Alugar</a>
               </div>
 
 

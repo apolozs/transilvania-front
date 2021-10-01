@@ -12,7 +12,7 @@
             <div class="scrollmenu">
               ...
               <a routerLink="/home">Home</a>
-              <a routerLink="/reserva">Faça sua reserva</a>
+              <!-- <a routerLink="/reserva">Faça sua reserva</a> -->
               <a routerLink="/reservas">Suas Reservas</a>
               <a routerLink="/usuario" >Atualizar Cadastro</a>
               <a routerLink="/perfil" >Perfil</a>
@@ -57,31 +57,31 @@
                 <div class="item">
                   <label for="Nome">Nome<span></span></label>
                   <div class="item">
-                    <input id="Nome" type="text" name="Nome" [(ngModel)]="Nome" disabled />
+                    <input id="Nome" type="text" name="Nome" [(ngModel)]="usuario.nome" placeholder="{{usuario.nome}}" disabled />
                     <!-- <input id="Nome" type="text" name="Nome" [(ngModel)]="quartos.nomeQuarto " disabled /> -->
                   </div>
                 </div>
                 <div class="item">
                   <label for="Quarto">Quarto<span></span></label>
-                    <input id="Quarto" type="text" name="Quarto"  disabled />  
+                    <input id="Quarto" type="text" name="Quarto" [(ngModel)]="quarto.nomeQuarto" placeholder="{{quarto.nomeQuarto}}" disabled />  
                   <i class="fas fa-calendar-alt"></i>
                 </div>
                 <div class="item">
                   <div>
                     <label for="dataInicio">Data de inicio</label>
-                    <input id="dataInicio" type="date" name="dataInicio"/>
+                    <input id="dataInicio" type="date" name="dataInicio"  [(ngModel)]="dataInicio"/>
                   </div>
                 </div>
                 <div class="item">
                   <div>
                     <label for="dataFim">Data de fim</label>
-                    <input id="dataFim" type="date" name="dataFim"/>
+                    <input id="dataFim" type="date" name="dataFim" [(ngModel)]="dataFim"/>
                   </div>
                 </div>
                 
 
                 <div class="btn-block">
-                  <button type="submit" href="/">Reservar</button>
+                  <button type="submit" (click)="create()">Reservar</button>
                 </div>
 
 

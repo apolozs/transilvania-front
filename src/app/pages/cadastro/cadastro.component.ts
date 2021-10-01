@@ -30,7 +30,7 @@ export class CadastroComponent implements OnInit {
   }
 
   criar(frm: FormGroup) {
-    console.log(this.usuario)
+    // console.log(this.usuario)
     this.service.criar(this.usuario).subscribe(resposta => {
       // console.log('teste')
       this.router.navigate(["/login"]);

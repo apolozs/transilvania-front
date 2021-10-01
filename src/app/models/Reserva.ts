@@ -1,13 +1,13 @@
-import { Data } from '@angular/router';
+import { Quarto } from 'src/app/models/Quarto';
 import {Adicionais} from './Adicionais';
+import { Usuario } from './Usuario';
 export interface Reserva {
-  Id: number;
-  Quarto:{ id:number };
-  Usuario:{ id:number };
-  Adicionais: Adicionais[];
-  CheckIn: Data;
-  CheckOut: Data;
-
-
-
+  Id?: number;
+  Quarto?:{ id: number };
+  // Quarto?: Quarto;
+  // Usuario?: Usuario;
+  Usuario?:{ id: number };
+  Adicionais?: Adicionais[];
+  checkIn: Date;
+  checkOut: Date;
 }

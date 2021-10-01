@@ -29,7 +29,7 @@ export class PerfilComponent implements OnInit {
       this.usuario.cpf = params["Cpf"]
       this.usuario.dataNascimento = params["DataNascimento"]
      
-      console.log(this.usuario);
+      // console.log(this.usuario);
   });
   }
 

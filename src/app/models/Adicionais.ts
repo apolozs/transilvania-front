@@ -1,6 +1,6 @@
 export interface Adicionais{
-  Id: number;
-  Nome: string;
-  Descricao: string;
-  Preco: number;
+  id?: number;
+  nome?: string;
+  descricao: string;
+  preco?: number;
 }

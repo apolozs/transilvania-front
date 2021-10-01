@@ -1,3 +1,4 @@
+import { Adicionais } from './../../models/Adicionais';
 import { Usuario } from 'src/app/models/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
@@ -12,13 +13,12 @@ import { QuartoService } from '../../services/quarto.service';
 export class HomeComponent implements OnInit {
   quartos : Quarto[] = [];
 
-  // quarto : Quarto = 
-  // {
-  //   nomeQuarto: '',
-  //   tipoDeCamas: '',
-  //   imagemQuarto: '',
-  //   preco:''
-  // };
+  quarto : Quarto = 
+  {
+    nomeQuarto: '',
+    tipoDeCamas: '',
+    imagemQuarto: '',
+  };
 
   usuario: Usuario = {      
     nome: '',
@@ -37,22 +37,16 @@ export class HomeComponent implements OnInit {
       this.usuario.senha = params["Senha"]
       this.usuario.dataNascimento = params["DataNascimento"]
      
-      console.log(this.usuario);
+      // console.log(this.usuario);
   });
-  this.route.queryParams.subscribe(params => {
-   
-    this.quartos= params["Id"]
-  
-   
-    console.log(this.usuario);
-});
+
   }
 
   ngOnInit(): void {
     this.service.list().subscribe((quarto) => { 
       this.quartos = quarto;
-      console.log(quarto)
-      console.log("BATATA", this.usuario)
+      // console.log(quarto)
+      // console.log("BATATA", this.usuario)
     })
 
   }
@@ -73,6 +67,35 @@ export class HomeComponent implements OnInit {
 
 
     this.router.navigate(['/perfil'], informacoes);
+  }
+
+  passToReserva(id: any, nomeQuarto: any ){
+    let informacoes: NavigationExtras = {
+      queryParams: 
+      {
+      "Id": Number(id),
+      "Nome": nomeQuarto,
+      "IdUsuario": this.usuario.id,
+      "NomeUsuario": this.usuario.nome
+      }
+      
+  }
+
+    // console.log("BATATA", id,)
+    this.router.navigate(['/reserva'], informacoes);
+  }
+
+  passToReservas(){
+    let informacoes: NavigationExtras = {
+      queryParams: 
+      {
+      "IdUsuario": this.usuario.id,
+      }
+  }
+  
+
+    // console.log("BATATA", id,)
+    this.router.navigate(['/reservas'], informacoes);
   }
 
 }

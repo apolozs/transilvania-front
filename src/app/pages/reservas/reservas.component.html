@@ -11,8 +11,8 @@
   
             <div class="scrollmenu">
               ...
-              <a routerLink="/home">Home</a>
-              <a routerLink="/reserva">Faça sua reserva</a>
+              <a (click)="passToHome()">Home</a>
+              <!-- <a routerLink="/reserva">Faça sua reserva</a> -->
               <a routerLink="/reservas">Suas Reservas</a>
               <a routerLink="/usuario" >Atualizar Cadastro</a>
               <a routerLink="/perfil" >Perfil</a>
@@ -51,13 +51,25 @@
         <div class="row">
           <div class="col-md-6">
               <div class="choose_box">
-                
-                
+                <h1>Minhas Reservas</h1>
+                <div class="card" *ngFor="let reserva of reservas">
+                  <div>
+                    <img width="250px" height="150px" class="image" src="{{ reserva.quarto.imagemQuarto }}"  />
+                  </div>
+                  <div class="cardtext">
+                    <h2>{{ reserva.quarto.nomeQuarto }}</h2>
+                    <p>Qtd camas: {{ reserva.quarto.quantidadeDeCamas }}</p>
+                    <p>Tipo de Cama: {{ reserva.quarto.tipoDeCamas }}</p>
+                    <p>Preço: {{ reserva.quarto.preco}}</p>
+                    <p>Data Inicio: {{ reserva.CheckIn}}</p>
+                    <p>Data Fim: {{ reserva.CheckOut}}</p>
 
-                reservaaa
-
-
-
+                  </div>
+                  
+                  <!-- <a (click)="passToReserva(quarto.id, quarto.nomeQuarto)" class="myButton">Alugar</a> -->
+                </div>
+  
+  
               </div>
           </div>
         </div>
