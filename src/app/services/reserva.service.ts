@@ -33,6 +33,9 @@ export class ReservaService {
     return this.http.delete<Reserva>(`${this.baseURL}/delete/${id}`);
   }
 
+  update(reserva: Reserva): Observable<Reserva[]> {
+    return this.http.put<Reserva[]>(`${this.baseURL}/update`, reserva);
+  }
 
   // list(): Observable<Quarto[]> {
   //   return this.http.get<Quarto[]>(`${this.baseURL}/listquarto`);

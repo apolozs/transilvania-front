@@ -61,12 +61,16 @@
                     <p>Qtd camas: {{ reserva.quarto.quantidadeDeCamas }}</p>
                     <p>Tipo de Cama: {{ reserva.quarto.tipoDeCamas }}</p>
                     <p>Preço: {{ reserva.quarto.preco}}</p>
-                    <p>Data Inicio: {{ reserva.CheckIn}}</p>
-                    <p>Data Fim: {{ reserva.CheckOut}}</p>
-
+                    <p>Data Inicio: {{ reserva.checkIn | date: 'dd/MM/yyyy'}}</p>
+                    <p>Data Fim: {{ reserva.checkOut | date: 'dd/MM/yyyy'}}</p>
+                    <p>Ajustar Data de checkin</p>
+                    <input id="checkIn" type="date" name="checkIn" [(ngModel)]="checkIn"/>
+                    <p>Ajustar Data de checkout</p>
+                    <input id="checkOut" type="date" name="checkOut" [(ngModel)]="checkOut" />
                   </div>
                   
                   <a (click)="delete(reserva.id)" class="myButton">Deletar</a>
+                  <a (click)="update(reserva.id)" class="myButton">Alterar</a>
                 </div>
   
   

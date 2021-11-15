@@ -14,10 +14,8 @@ export class ReservasComponent implements OnInit {
 
   reservas : Reserva[] = [];
 
-  // reserva: Reserva = {      
-  //   Id:0
-  // };
-
+  checkIn!: Date;
+  checkOut!: Date;
 
   usuario: Usuario = {      
     nome: '',
@@ -56,6 +54,21 @@ export class ReservasComponent implements OnInit {
     console.log(reserva)
     this.router.navigate(['/home']);
   });
+}
+
+update(idReserva: any): void {
+  let reserva : Reserva = 
+  {
+    Id: parseInt(idReserva),
+    checkIn: this.checkIn,
+    checkOut: this.checkOut
+  }
+
+  this.serviceReserva.update(reserva).subscribe((reserva) => {
+    console.log(reserva)
+    
+  });
+  window.location.reload();
 }
 
   

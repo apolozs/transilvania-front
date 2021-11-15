@@ -45,7 +45,7 @@ export class UsuarioComponent implements OnInit {
   update(): void {
     let usuario : Usuario = 
     {
-      id: this.id,
+      id: this.usuario.id,
       nome: this.Nome,
       senha: this.Senha,
       cpf: this.Cpf,
