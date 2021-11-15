@@ -50,64 +50,13 @@ export class HomeComponent implements OnInit {
     })
   }
 
-
-  ///REDIRECIONAMENTO INICIO
-  passToPerfil () 
-  {
-    let informacoes: NavigationExtras = {
-        queryParams: 
-        {
-        
-        "Nome": this.usuario.nome,
-        "Cpf": this.usuario.cpf,
-        "DataNascimento": this.usuario.dataNascimento,
-        "Id": this.usuario.id
-        
-        }
-    }
-    this.router.navigate(['/perfil'], informacoes);
-  }
-
-  passToSuasReservas () 
-  {
-    let informacoes: NavigationExtras = {
-        queryParams: 
-        {
-        
-        "Nome": this.usuario.nome,
-        "Cpf": this.usuario.cpf,
-        "DataNascimento": this.usuario.dataNascimento,
-        "Id": this.usuario.id
-        
-        }
-    }
-    this.router.navigate(['/reservas'], informacoes);
-  }
-  passToAtualizar () 
-  {
-    let informacoes: NavigationExtras = {
-      queryParams: 
-      {
-      
-      "Nome": this.usuario.nome,
-      "Cpf": this.usuario.cpf,
-      "DataNascimento": this.usuario.dataNascimento,
-      "Id": this.usuario.id
-      }
-    }
-
-    this.router.navigate(['/usuario'], informacoes);
-  }
-  ///REDIRECIONAMENTO FIM 
-
-
   passToReserva(id: any, nomeQuarto: any ){
     let informacoes: NavigationExtras = {
       queryParams: 
       {
-      "Id": Number(id),
+      "IdQuarto": Number(id),
       "Nome": nomeQuarto,
-      "IdUsuario": this.usuario.id,
+      "Id": this.usuario.id,
       "NomeUsuario": this.usuario.nome
       }
       
@@ -117,34 +66,56 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/reserva'], informacoes);
   }
 
-  passToReservas(){
+  passToAtualizar () 
+  {
     let informacoes: NavigationExtras = {
       queryParams: 
       {
-      "IdUsuario": this.usuario.id,
+      
+        "Nome": this.usuario.nome,
+        "Senha": this.usuario.senha,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
+      
       }
   }
-  
 
-    // console.log("BATATA", id,)
-    this.router.navigate(['/reservas'], informacoes);
-  }
+  this.router.navigate(['/usuario'], informacoes);
+ }
 
-  passToHome(){
-    let navigationExtras: NavigationExtras = {
+ passToSuasReservas(){
+  let informacoes: NavigationExtras = {
+    queryParams: 
+    {
+      "Nome": this.usuario.nome,
+      "Senha": this.usuario.senha,
+      "Cpf": this.usuario.cpf,
+      "DataNascimento": this.usuario.dataNascimento,
+      "Id": this.usuario.id
+    }
+}
+
+
+  // console.log("BATATA", id,)
+  this.router.navigate(['/reservas'], informacoes);
+}
+
+passToPerfil () 
+{
+  let informacoes: NavigationExtras = {
       queryParams: 
       {
       
       "Nome": this.usuario.nome,
-      // "Senha": this.usuario.senha,
       "Cpf": this.usuario.cpf,
       "DataNascimento": this.usuario.dataNascimento,
       "Id": this.usuario.id
-        
+      
       }
-    };
-      this.router.navigate(['/home'], navigationExtras);
-    
-    }
+  }
+  this.router.navigate(['/perfil'], informacoes);
+}
+
 
 }

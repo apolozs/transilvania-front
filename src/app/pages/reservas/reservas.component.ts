@@ -29,9 +29,14 @@ export class ReservasComponent implements OnInit {
   constructor(private serviceReserva: ReservaService,private route: ActivatedRoute,private router: Router) 
   {
     this.route.queryParams.subscribe(params => {
-      this.usuario.id= params["IdUsuario"]
+      this.usuario.id= params["Id"]
       console.log(this.usuario.id);
     });
+
+    this.serviceReserva.list(this.usuario.id).subscribe((listReserva) => { 
+      this.reservas = listReserva;
+      // console.log("BATATA", this.usuario)
+    })
 
   }
 
@@ -43,32 +48,6 @@ export class ReservasComponent implements OnInit {
     })
   }
 
-  passToPerfil(){
-    let informacoes: NavigationExtras = {
-      queryParams: 
-      {
-      "IdUsuario": this.usuario.id,
-      }
-  }
-  this.router.navigate(['/perfil'], informacoes);
- }
-
- passToHome(){
-  let navigationExtras: NavigationExtras = {
-    queryParams: 
-    {
-    
-    "Nome": this.usuario.nome,
-    // "Senha": this.usuario.senha,
-    "Cpf": this.usuario.cpf,
-    "DataNascimento": this.usuario.dataNascimento,
-    "Id": this.usuario.id
-      
-    }
-  };
-    this.router.navigate(['/home'], navigationExtras);
-  
-  }
 
  delete(idReserva: any): void {
 
@@ -79,20 +58,60 @@ export class ReservasComponent implements OnInit {
   });
 }
 
-
-passToReservas(){
+  
+passToPerfil () 
+{
   let informacoes: NavigationExtras = {
     queryParams: 
     {
-    "IdUsuario": this.usuario.id,
+    
+      "Nome": this.usuario.nome,
+      // "Senha": this.usuario.senha,
+      "Cpf": this.usuario.cpf,
+      "DataNascimento": this.usuario.dataNascimento,
+      "Id": this.usuario.id
+
     }
+    
+}
+
+this.router.navigate(['/perfil'], informacoes);
+}
+
+passToAtualizar(){
+let informacoes: NavigationExtras = {
+  queryParams: 
+  {
+
+  "Nome": this.usuario.nome,
+  // "Senha": this.usuario.senha,
+  "Cpf": this.usuario.cpf,
+  "DataNascimento": this.usuario.dataNascimento,
+  "Id": this.usuario.id
+  
+  }
 }
 
 
-  // console.log("BATATA", id,)
-  this.router.navigate(['/reservas'], informacoes);
+// console.log("BATATA", id,)
+this.router.navigate(['/usuario'], informacoes);
 }
 
+passToHome(){
+let navigationExtras: NavigationExtras = {
+  queryParams: 
+  {
+  
+  "Nome": this.usuario.nome,
+  "Senha": this.usuario.senha,
+  "Cpf": this.usuario.cpf,
+  "DataNascimento": this.usuario.dataNascimento,
+  "Id": this.usuario.id
+    
+  }
+};
+  this.router.navigate(['/home'], navigationExtras);
 
+}
 
 }

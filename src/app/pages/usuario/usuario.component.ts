@@ -64,10 +64,11 @@ export class UsuarioComponent implements OnInit {
       queryParams: 
       {
       
-      "Nome": this.usuario.nome,
-      "Cpf": this.usuario.cpf,
-      "DataNascimento": this.usuario.dataNascimento,
-      "Id": this.usuario.id
+        "Nome": this.usuario.nome,
+        "Senha": this.usuario.senha,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
       
       }
   }
@@ -75,13 +76,32 @@ export class UsuarioComponent implements OnInit {
   this.router.navigate(['/perfil'], informacoes);
  }
 
- passToHome(){
+ passToSuasReservas(){
+  let informacoes: NavigationExtras = {
+    queryParams: 
+    {
+
+    "Nome": this.usuario.nome,
+    "Senha": this.usuario.senha,
+    "Cpf": this.usuario.cpf,
+    "DataNascimento": this.usuario.dataNascimento,
+    "Id": this.usuario.id
+    
+    }
+}
+
+
+  // console.log("BATATA", id,)
+  this.router.navigate(['/reservas'], informacoes);
+}
+
+passToHome(){
   let navigationExtras: NavigationExtras = {
     queryParams: 
     {
     
     "Nome": this.usuario.nome,
-    // "Senha": this.usuario.senha,
+    "Senha": this.usuario.senha,
     "Cpf": this.usuario.cpf,
     "DataNascimento": this.usuario.dataNascimento,
     "Id": this.usuario.id
@@ -91,21 +111,5 @@ export class UsuarioComponent implements OnInit {
     this.router.navigate(['/home'], navigationExtras);
   
   }
-
-
-  passToReservas(){
-    let informacoes: NavigationExtras = {
-      queryParams: 
-      {
-      "IdUsuario": this.usuario.id,
-      }
-  }
-  
-
-    // console.log("BATATA", id,)
-    this.router.navigate(['/reservas'], informacoes);
-  }
-
-
 
 }

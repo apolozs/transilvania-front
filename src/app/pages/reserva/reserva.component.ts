@@ -38,9 +38,9 @@ export class ReservaComponent implements OnInit {
   {
     this.route.queryParams.subscribe(params => {
    
-      this.quarto.id= params["Id"]
+      this.quarto.id= params["IdQuarto"]
       this.quarto.nomeQuarto= params["Nome"]
-      this.usuario.id= params["IdUsuario"]
+      this.usuario.id= params["Id"]
       this.usuario.nome= params["NomeUsuario"]
       // console.log(params);
     });
@@ -68,7 +68,7 @@ export class ReservaComponent implements OnInit {
     let informacoes: NavigationExtras = {
       queryParams: 
       {
-      "IdUsuario": this.usuario.id,
+      "Id": this.usuario.id,
       }
   }
 
@@ -81,7 +81,7 @@ export class ReservaComponent implements OnInit {
     let informacoes: NavigationExtras = {
       queryParams: 
       {
-      "IdUsuario": this.usuario.id,
+      "Id": this.usuario.id,
       }
   }
   

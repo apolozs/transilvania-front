@@ -28,11 +28,17 @@ export class PerfilComponent implements OnInit {
       this.usuario.cpf = params["Cpf"]
       this.usuario.dataNascimento = params["DataNascimento"]
      
-      // console.log(this.usuario);
+      console.log("bolinho" + params["Id"])
   });
   }
 
   ngOnInit(): void {
+    this.service.getById(this.usuario.id).subscribe((usuarioByid) => 
+    {      
+     this.usuario.nome = usuarioByid.nome
+     this.usuario.cpf = usuarioByid.cpf
+     this.usuario.dataNascimento = usuarioByid.dataNascimento
+    });
   }
 
   delete(): void {
@@ -49,10 +55,11 @@ export class PerfilComponent implements OnInit {
       queryParams: 
       {
       
-      "Nome": this.usuario.nome,
-      "Cpf": this.usuario.cpf,
-      "DataNascimento": this.usuario.dataNascimento,
-      "Id": this.usuario.id
+        "Nome": this.usuario.nome,
+        "Senha": this.usuario.senha,
+        "Cpf": this.usuario.cpf,
+        "DataNascimento": this.usuario.dataNascimento,
+        "Id": this.usuario.id
       
       }
   }
@@ -60,11 +67,15 @@ export class PerfilComponent implements OnInit {
   this.router.navigate(['/usuario'], informacoes);
  }
 
- passToReservas(){
+ passToSuasReservas(){
   let informacoes: NavigationExtras = {
     queryParams: 
     {
-    "IdUsuario": this.usuario.id,
+      // "Nome": this.usuario.nome,
+      // "Senha": this.usuario.senha,
+      // "Cpf": this.usuario.cpf,
+      // "DataNascimento": this.usuario.dataNascimento,
+      "Id": this.usuario.id
     }
 }
 
@@ -79,7 +90,7 @@ passToHome(){
     {
     
     "Nome": this.usuario.nome,
-    // "Senha": this.usuario.senha,
+    "Senha": this.usuario.senha,
     "Cpf": this.usuario.cpf,
     "DataNascimento": this.usuario.dataNascimento,
     "Id": this.usuario.id
@@ -90,22 +101,5 @@ passToHome(){
   
   }
 
-  passToPerfil () 
-  {
-    let informacoes: NavigationExtras = {
-        queryParams: 
-        {
-        
-        "Nome": this.usuario.nome,
-        "Cpf": this.usuario.cpf,
-        "DataNascimento": this.usuario.dataNascimento,
-        "Id": this.usuario.id
-        
-        }
-    }
-    this.router.navigate(['/perfil'], informacoes);
-  }
  
-
-
 }
